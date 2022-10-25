@@ -15,12 +15,12 @@ const Login = () => {
             <Form onSubmit={loginHandler} className=' me-5 pe-5'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control name='email' type="email" placeholder="Enter email" />
+                    <Form.Control name='email' type="email" placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-1" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control name='password' type="password" placeholder="Password" />
+                    <Form.Control name='password' type="password" placeholder="Password" required />
                 </Form.Group>
                 <small className='ms-2 mb-3 text-warning' style={{ display: 'block' }}>New to Scan_f Academy. Please <Link to='/register' className=''>Register</Link></small>
                 <Button variant="warning" type="submit">
