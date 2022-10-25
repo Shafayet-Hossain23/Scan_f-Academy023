@@ -1,6 +1,7 @@
 import { RouterProvider } from 'react-router-dom';
 import './App.css';
-import { routes } from './Components/Routes/Routes';
+import { routes } from './Routes/Routes';
+
 
 function App() {
   const router = routes
