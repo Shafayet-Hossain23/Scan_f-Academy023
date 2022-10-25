@@ -4,6 +4,8 @@ import Blog from "../Pages/Blog/Blog";
 import Courses from "../Pages/Courses/Courses";
 import FAQ from "../Pages/FAQ/FAQ";
 import Home from "../Pages/Home/Home";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
 import LeftSide from "../SharedPage/LeftSideNav/LeftSide";
 
 
@@ -28,13 +30,16 @@ export const routes = createBrowserRouter([
                 path: '/blog',
                 element: <Blog></Blog>
             },
-            /* {
-                path: '/course-name',
-                loader: () => {
-                    return fetch('http://localhost:5000/course-name')
-                },
-                element: <LeftSide></LeftSide>
-            }, */
+            {
+                path: '/login',
+
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+
+                element: <Register></Register>
+            },
         ]
     }
 

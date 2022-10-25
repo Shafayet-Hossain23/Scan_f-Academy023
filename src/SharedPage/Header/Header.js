@@ -44,7 +44,7 @@ const Header = () => {
                         </Nav>
 
                         <div>
-                            <Link>
+                            <Link to='/login'>
                                 <Button variant="outline-warning">Login
                                 </Button>
                             </Link>
