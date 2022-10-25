@@ -15,11 +15,11 @@ const Register = () => {
             <Form onSubmit={loginHandler} className=' me-5 pe-5'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Full Name *</Form.Label>
-                    <Form.Control name='name' type="email" placeholder="Full Name" required />
+                    <Form.Control name='name' type="text" placeholder="Full Name" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Photo URL</Form.Label>
-                    <Form.Control name='photo' type="email" placeholder="Photo URL" />
+                    <Form.Control name='photo' type="text" placeholder="Photo URL" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address *</Form.Label>

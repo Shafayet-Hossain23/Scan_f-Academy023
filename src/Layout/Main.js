@@ -11,7 +11,7 @@ const Main = () => {
             <Header></Header>
             <div style={{ height: '1000px' }} className='bg-dark text-white' >
                 <hr className='my-0' />
-                <div className='py-5'>
+                <div className='pt-4'>
                     <Container>
                         <Row>
                             <Col sm={3}>
