@@ -9,16 +9,21 @@ const Main = () => {
     return (
         <div>
             <Header></Header>
-            <Container>
-                <Row>
-                    <Col sm={4}>
-                        <LeftSide></LeftSide>
-                    </Col>
-                    <Col sm={8}>
-                        <Outlet></Outlet>
-                    </Col>
-                </Row>
-            </Container>
+            <div style={{ height: '1000px' }} className='bg-dark text-white' >
+                <hr className='my-0' />
+                <div className='py-5'>
+                    <Container>
+                        <Row>
+                            <Col sm={3}>
+                                <LeftSide></LeftSide>
+                            </Col>
+                            <Col sm={9}>
+                                <Outlet></Outlet>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+            </div>
         </div >
     );
 };

@@ -26,7 +26,7 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link className='ms-lg-5 mb-1'>
+                            <Nav.Link className=' mb-1'>
                                 <Link to='/courses' style={{ color: "#FFAE6D", textDecoration: 'none' }}>
                                     Courses
                                 </Link>
@@ -51,8 +51,11 @@ const Header = () => {
                         </div>
 
                     </Navbar.Collapse>
+
                 </Container>
+
             </Navbar>
+
         </div>
     );
 };
