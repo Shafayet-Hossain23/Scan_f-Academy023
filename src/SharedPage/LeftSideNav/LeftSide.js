@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import './LeftSide.css'
 
 const LeftSide = () => {
     const [courseName, setCourseName] = useState([])
@@ -10,8 +11,11 @@ const LeftSide = () => {
     }, [])
     // console.log(courseName)
     return (
-        <div style={{ height: '450px' }}>
-            <p>Learn programming Language :</p>
+        <div className='pb-3' style={{
+            position: "sticky",
+            top: "80px"
+        }}>
+            <p>Learn Language :</p>
             {
                 courseName.map(c => <p key={c.id}><Link to={`/details/${c.id}`} className='text-warning'>{c.name}</Link></p>)
             }

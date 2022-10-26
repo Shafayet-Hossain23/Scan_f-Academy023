@@ -6,7 +6,7 @@ import image1 from '../../Assets/images/image-1.png';
 const Header = () => {
     return (
         <div>
-            <Navbar bg="dark" expand="lg">
+            <Navbar style={{ borderBottom: '1px solid orange' }} fixed="top" bg="dark" expand="lg">
                 <Container>
                     <Navbar.Brand>
                         <div className='text-warning'>

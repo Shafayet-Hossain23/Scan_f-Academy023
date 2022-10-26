@@ -9,9 +9,8 @@ const Main = () => {
     return (
         <div>
             <Header></Header>
-            <div style={{ height: '100%' }} className='bg-dark text-white pb-5' >
-                <hr className='my-0' />
-                <div className='pt-4'>
+            <div style={{ height: '100%' }} className='bg-dark text-white pb-4 mt-5 pt-5' >
+                <div className='pt-2'>
                     <Container>
                         <Row>
                             <Col sm={3}>
@@ -21,7 +20,12 @@ const Main = () => {
                                 <Outlet></Outlet>
                             </Col>
                         </Row>
+                        <hr className='mt-5 ' />
+                        <footer>
+                            <p className='text-center text-warning mb-3'>Copyright © 2025 All Rights Reserved by Scan_f Academy.</p>
+                        </footer>
                     </Container>
+
                 </div>
             </div>
         </div >
