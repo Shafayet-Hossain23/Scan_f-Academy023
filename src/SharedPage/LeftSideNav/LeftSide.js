@@ -13,7 +13,7 @@ const LeftSide = () => {
         <div style={{ height: '450px' }}>
             <p>Learn programming Language :</p>
             {
-                courseName.map(c => <p key={c.id}><Link className='text-warning'>{c.name}</Link></p>)
+                courseName.map(c => <p key={c.id}><Link to={`/details/${c.id}`} className='text-warning'>{c.name}</Link></p>)
             }
         </div>
     );

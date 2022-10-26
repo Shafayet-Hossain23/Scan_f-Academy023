@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const SubCourse = ({ dInfo }) => {
     // console.log(dInfo)
-    const { courseTitle, image_url, rating, courseInfo, totalEnroll, trainer } = dInfo
+    const { id, courseTitle, image_url, rating, courseInfo, totalEnroll, trainer } = dInfo
     return (
         <div className='col-lg-6 col-sm-12 col-md-6'>
             <Card style={{ border: '1px solid white', height: '435px' }} className="bg-dark">
@@ -33,7 +33,7 @@ const SubCourse = ({ dInfo }) => {
 
                 </Card.Body>
                 <Card.Footer style={{ borderTop: '1px solid white' }} className="p-0">
-                    <Link>
+                    <Link to={`/details/${id}`}>
                         <Button style={{ height: '100%', width: '100%', borderRadius: '0', border: '0' }} variant="outline-warning">
                             Details <FaArrowCircleRight className='ms-0 mb-1' />
                         </Button>

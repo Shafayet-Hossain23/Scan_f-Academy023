@@ -1,0 +1,14 @@
+.hoverEffect:hover {
+    cursor: pointer;
+    color: orange;
+}
+
+.detailsStyle {
+    text-align: justify;
+}
+
+@media only screen and (max-width: 900px) {
+    .imgStyle {
+        height: 100% !important;
+    }
+}
