@@ -65,7 +65,7 @@ const CourseDetails = () => {
 
                 </Card.Body>
                 <Card.Footer style={{ borderTop: '1px solid white' }} className="p-0">
-                    <Link to={`/details/${id}`}>
+                    <Link to={`/details/premium/${id}`}>
                         <Button style={{ height: '100%', width: '100%', borderRadius: '3px', border: '0' }} variant="outline-warning">
                             Get premium access <FaArrowCircleRight className='ms-0 mb-1' />
                         </Button>
