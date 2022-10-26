@@ -1,24 +1,42 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
+import { AuthContext } from '../../Context/UserContext';
 
 
 const Login = () => {
-    const loginHandler = (event) => {
+    const { loginHandler, googlePopUpSignin, githubPopup } = useContext(AuthContext);
+    const [error, setError] = useState('')
+    const [success, setSuccess] = useState(false)
+    const loginEventHandler = (event) => {
         event.preventDefault()
         const form = event.target
         const email = form.email.value
         const password = form.password.value
         console.log(email, password)
+        setError('')
+        setSuccess(false)
+        loginHandler(email, password)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                setSuccess(true)
+            })
+            .catch(error => {
+                const errorMessage = error.message
+                console.error(error);
+                setError(errorMessage)
+            })
     }
     return (
+
         <div >
             <Container>
                 <Row>
                     <Col sm={8}>
                         <div className='me-4'>
-                            <Form onSubmit={loginHandler}>
+                            <Form onSubmit={loginEventHandler}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
                                     <Form.Control name='email' type="email" placeholder="Enter email" required />
@@ -29,6 +47,10 @@ const Login = () => {
                                     <Form.Control name='password' type="password" placeholder="Password" required />
                                 </Form.Group>
                                 <small className='ms-2 mb-3 text-warning' style={{ display: 'block' }}>New to Scan_f Academy. Please <Link to='/register' className=''>Register</Link></small>
+                                <div>
+                                    {error && <p className='text-danger'>{error}</p>}
+                                    {success && <p className='text-success'>Successfully Login!</p>}
+                                </div>
                                 <Button variant="warning" type="submit">
                                     Login
                                 </Button>

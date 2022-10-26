@@ -7,7 +7,7 @@ const Register = () => {
     const { registerHandler, updateProfileHandler } = useContext(AuthContext);
     const [error, setError] = useState('')
     const [success, setSuccess] = useState(false)
-    const loginHandler = (event) => {
+    const signUpEventHandler = (event) => {
         event.preventDefault()
         const form = event.target
         const email = form.email.value
@@ -37,7 +37,7 @@ const Register = () => {
                 <Row>
                     <Col sm={8}>
                         <div className='ms-2'>
-                            <Form onSubmit={loginHandler}>
+                            <Form onSubmit={signUpEventHandler}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Your Full Name *</Form.Label>
                                     <Form.Control name='name' type="text" placeholder="Full Name" required />
@@ -58,7 +58,7 @@ const Register = () => {
                                 <small className='ms-2 mb-3 text-warning' style={{ display: 'block' }}>Already have an account. Please <Link to='/login' className=''>Login</Link></small>
                                 <div>
                                     {error && <p className='text-danger'>{error}</p>}
-                                    {success && <p className='text-success'>Successfully register!</p>}
+                                    {success && <p className='text-success'>Successfully Register!</p>}
                                 </div>
                                 <Button variant="warning" type="submit">
                                     Register
