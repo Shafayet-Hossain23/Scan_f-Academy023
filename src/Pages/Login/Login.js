@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../Context/UserContext';
 
@@ -9,6 +9,7 @@ const Login = () => {
     const { loginHandler, googlePopUpSignin, githubPopup } = useContext(AuthContext);
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
+    const navigate = useNavigate();
     const loginEventHandler = (event) => {
         event.preventDefault()
         const form = event.target
@@ -22,6 +23,8 @@ const Login = () => {
                 const user = result.user
                 console.log(user)
                 setSuccess("Successfullly Login!")
+                form.reset()
+                navigate("/courses")
             })
             .catch(error => {
                 const errorMessage = error.message

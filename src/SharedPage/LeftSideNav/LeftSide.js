@@ -10,7 +10,7 @@ const LeftSide = () => {
     }, [])
     // console.log(courseName)
     return (
-        <div>
+        <div style={{ height: '450px' }}>
             <p>Learn programming Language :</p>
             {
                 courseName.map(c => <p key={c.id}><Link className='text-warning'>{c.name}</Link></p>)

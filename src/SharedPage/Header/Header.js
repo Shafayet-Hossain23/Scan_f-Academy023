@@ -27,7 +27,7 @@ const Header = () => {
                             navbarScroll
                         >
                             <Nav.Link className=' mb-1'>
-                                <Link to='/courses' style={{ color: "#FFAE6D", textDecoration: 'none' }}>
+                                <Link to='/' style={{ color: "#FFAE6D", textDecoration: 'none' }}>
                                     Courses
                                 </Link>
                             </Nav.Link >

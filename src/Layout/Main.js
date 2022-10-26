@@ -9,7 +9,7 @@ const Main = () => {
     return (
         <div>
             <Header></Header>
-            <div style={{ height: '1000px' }} className='bg-dark text-white' >
+            <div style={{ height: '100%' }} className='bg-dark text-white pb-5' >
                 <hr className='my-0' />
                 <div className='pt-4'>
                     <Container>
