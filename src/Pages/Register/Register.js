@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/UserContext';
 
 const Register = () => {
+    const { registerHandler, updateProfileHandler } = useContext(AuthContext);
+    const [error, setError] = useState('')
+    const [success, setSuccess] = useState(false)
     const loginHandler = (event) => {
         event.preventDefault()
         const form = event.target
         const email = form.email.value
         const password = form.password.value
-        console.log(email, password)
+        const name = form.name.value
+        const photo = form.photo.value
+        console.log(email, password, name, photo)
+        setError('')
+        setSuccess(false)
+        registerHandler(email, password)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                updateProfileHandler(name, photo)
+                form.reset()
+                setSuccess(true)
+            })
+            .catch(error => {
+                const errorMessage = error.message
+                console.error(error)
+                setError(errorMessage)
+            })
     }
     return (
         <div>
@@ -35,6 +56,10 @@ const Register = () => {
                                     <Form.Control name='password' type="password" placeholder="Password" required />
                                 </Form.Group>
                                 <small className='ms-2 mb-3 text-warning' style={{ display: 'block' }}>Already have an account. Please <Link to='/login' className=''>Login</Link></small>
+                                <div>
+                                    {error && <p className='text-danger'>{error}</p>}
+                                    {success && <p className='text-success'>Successfully register!</p>}
+                                </div>
                                 <Button variant="warning" type="submit">
                                     Register
                                 </Button>
