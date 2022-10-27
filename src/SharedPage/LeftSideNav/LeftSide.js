@@ -11,7 +11,7 @@ const LeftSide = () => {
     }, [])
     // console.log(courseName)
     return (
-        <div className='pb-3' style={{
+        <div className='pb-3 leftsideStyle' style={{
             position: "sticky",
             top: "80px"
         }}>

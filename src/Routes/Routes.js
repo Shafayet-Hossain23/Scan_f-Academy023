@@ -55,6 +55,10 @@ export const routes = createBrowserRouter([
                 element: <PrivateRoute><PremiumAccess></PremiumAccess></PrivateRoute>
             },
         ]
+    },
+    {
+        path: '*',
+        element: <div className="text-center my-5">Error! Not found the route (404)</div>
     }
 
 ])
