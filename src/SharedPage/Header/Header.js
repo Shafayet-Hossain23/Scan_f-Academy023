@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import image1 from '../../Assets/images/image-1.png';
+import { AuthContext } from '../../Context/UserContext';
 
 const Header = () => {
+    const { user, logoutHandler } = useContext(AuthContext)
+    const logoutClickHandler = () => {
+        logoutHandler()
+            .then(() => {
+
+            })
+            .catch(error => {
+
+            })
+    }
     return (
         <div>
             <Navbar style={{ borderBottom: '1px solid orange' }} fixed="top" bg="dark" expand="lg">
-                <Container>
+                <Container fluid>
                     <Navbar.Brand>
                         <div className='text-warning'>
 
@@ -42,12 +53,21 @@ const Header = () => {
                                 </Link>
                             </Nav.Link>
                         </Nav>
-
                         <div>
-                            <Link to='/login'>
-                                <Button variant="outline-warning">Login
-                                </Button>
-                            </Link>
+                            {
+                                user?.uid ?
+                                    <>
+                                        <div>
+                                            <Button className='ms-2' onClick={logoutClickHandler} variant="outline-danger">Logout
+                                            </Button>
+                                        </div>
+                                    </> :
+                                    <>
+                                        <Link to='/login'>
+                                            <Button variant="outline-warning">Login
+                                            </Button>
+                                        </Link></>
+                            }
                         </div>
 
                     </Navbar.Collapse>

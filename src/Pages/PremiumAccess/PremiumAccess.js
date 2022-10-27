@@ -12,7 +12,7 @@ const PremiumAccess = () => {
                     <Card.Title>{courseTitle}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Course Id: {id}</Card.Subtitle>
                     <Card.Text>
-                        Thank you for purchasing Premium course. We contact with you within 12-Hours.
+                        Thank you for purchasing Premium course. Our team contact with you within 12-Hours.
                     </Card.Text>
                     <div>
                         <p className='text-center'>Your Information</p>
@@ -20,8 +20,8 @@ const PremiumAccess = () => {
                         <p>Name : </p>
                         <p>Email-Id :</p>
                     </div>
-                    <Card.Link href="#">Card Link</Card.Link>
-                    <Card.Link href="#">Another Link</Card.Link>
+                    <Card.Link href="#">Scanf Academy</Card.Link>
+                    <Card.Link href="#">All courses</Card.Link>
                 </Card.Body>
             </Card>
         </div>

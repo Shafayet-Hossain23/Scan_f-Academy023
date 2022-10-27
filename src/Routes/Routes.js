@@ -9,6 +9,7 @@ import Login from "../Pages/Login/Login";
 import PremiumAccess from "../Pages/PremiumAccess/PremiumAccess";
 import Register from "../Pages/Register/Register";
 import LeftSide from "../SharedPage/LeftSideNav/LeftSide";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const routes = createBrowserRouter([
@@ -51,7 +52,7 @@ export const routes = createBrowserRouter([
                 loader: ({ params }) => {
                     return fetch(`http://localhost:5000/details/premium/${params.id}`)
                 },
-                element: <PremiumAccess></PremiumAccess>
+                element: <PrivateRoute><PremiumAccess></PremiumAccess></PrivateRoute>
             },
         ]
     }
