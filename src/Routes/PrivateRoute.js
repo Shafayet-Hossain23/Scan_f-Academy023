@@ -10,10 +10,10 @@ const PrivateRoute = ({ children }) => {
         return <div className='text-center '><Spinner animation="grow" variant="warning" /></div>
     }
 
-    if (user && user.uid) {
-        return children
+    if (!user) {
+        return <Navigate to="/login" state={{ from: location }} replace></Navigate>
     }
-    return <Navigate to="/login" state={{ from: location }} replace></Navigate>
+    return children
 
 };
 

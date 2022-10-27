@@ -19,7 +19,7 @@ const Header = () => {
     return (
         <div>
             <Navbar style={{ borderBottom: '1px solid orange' }} fixed="top" bg="dark" expand="lg">
-                <Container fluid>
+                <Container >
                     <Navbar.Brand>
                         <div className='text-warning'>
 
@@ -38,7 +38,7 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link className=' mb-1'>
+                            <Nav.Link className=' mb-1 ms-5 ps-5'>
                                 <Link to='/' style={{ color: "#FFAE6D", textDecoration: 'none' }}>
                                     Courses
                                 </Link>

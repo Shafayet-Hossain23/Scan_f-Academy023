@@ -6,7 +6,7 @@ import { routes } from './Routes/Routes';
 function App() {
   const router = routes
   return (
-    <div className="App">
+    <div className="bg-dark">
       <RouterProvider router={router}>
 
       </RouterProvider>
