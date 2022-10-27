@@ -9,7 +9,7 @@ const Main = () => {
     return (
         <div>
             <Header></Header>
-            <div style={{ minHeight: '590px' }} className='bg-dark text-white pb-4 mt-5 pt-5' >
+            <div style={{ minHeight: '620px' }} className='bg-dark text-white pb-4 mt-5 pt-5' >
                 <div className='pt-2'>
                     <Container>
                         <Row>
