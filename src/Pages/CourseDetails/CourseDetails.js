@@ -3,7 +3,12 @@ import { Button, Card } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaFileDownload, FaStar, FaUserGraduate, FaArrowCircleRight } from 'react-icons/fa';
 
+
 import './CourseDetails.css'
+
+
+import ReactToPdf from './ReactToPdf';
+
 
 
 const CourseDetails = () => {
@@ -19,7 +24,9 @@ const CourseDetails = () => {
                             <h3 className='mb-0'>{courseTitle}</h3>
                         </div>
                         <div title='Download' className='hoverEffect'>
-                            <FaFileDownload />
+                            {/* <FaFileDownload /> */}
+                            <ReactToPdf></ReactToPdf>
+
                         </div>
                     </Card.Title>
                 </Card.Header>
@@ -76,5 +83,6 @@ const CourseDetails = () => {
         </div>
     );
 };
+
 
 export default CourseDetails;

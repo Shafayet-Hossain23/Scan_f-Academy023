@@ -10,6 +10,7 @@ const PremiumAccess = () => {
     return (
         <div>
             <Card className='bg-dark ' style={{ margin: "20px auto", width: '75%', height: '100%', border: '1px solid orange' }}>
+                <Card.Header className='text-center text-warning'>Checkout </Card.Header>
                 <Card.Body>
                     <Card.Title>{courseTitle}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Course Id: {id}</Card.Subtitle>
