@@ -3,6 +3,7 @@ import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import image1 from '../../Assets/images/image-1.png';
 import { AuthContext } from '../../Context/UserContext';
+import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
     const { user, logoutHandler } = useContext(AuthContext)
@@ -57,10 +58,23 @@ const Header = () => {
                             {
                                 user?.uid ?
                                     <>
-                                        <div>
-                                            <Button className='ms-2' onClick={logoutClickHandler} variant="outline-danger">Logout
-                                            </Button>
-                                        </div>
+                                        {
+                                            user?.photoURL ?
+                                                <>
+                                                    <div>
+                                                        <img title={user?.displayName} className='text-white me-2 rounded-circle' style={{ height: '37px', width: "33px" }} src={user.photoURL} alt="" />
+                                                        <Button className='ms-2' onClick={logoutClickHandler} variant="outline-danger">Logout
+                                                        </Button>
+                                                    </div>
+                                                </> :
+                                                <>
+                                                    <div>
+                                                        <FaUserCircle className='text-white me-2' style={{ height: '40px', width: "33px" }} />
+                                                        <Button className='ms-2' onClick={logoutClickHandler} variant="outline-danger">Logout
+                                                        </Button>
+                                                    </div>
+                                                </>
+                                        }
                                     </> :
                                     <>
                                         <Link to='/login'>
