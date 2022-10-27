@@ -5,11 +5,11 @@ import SubCourse from './SubCourse';
 const Courses = () => {
     const [details, setDetails] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/')
+        fetch('https://learning-platform-server-side-lime.vercel.app/')
             .then(res => res.json())
             .then(data => setDetails(data))
     }, [])
-    console.log(details)
+    // console.log(details)
     return (
         <div>
             <div className='container'>

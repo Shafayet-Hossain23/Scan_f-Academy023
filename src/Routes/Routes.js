@@ -43,14 +43,14 @@ export const routes = createBrowserRouter([
             {
                 path: '/details/:id',
                 loader: ({ params }) => {
-                    return fetch(`http://localhost:5000/details/${params.id}`)
+                    return fetch(`https://learning-platform-server-side-lime.vercel.app/details/${params.id}`)
                 },
                 element: <CourseDetails></CourseDetails>
             },
             {
                 path: '/details/premium/:id',
                 loader: ({ params }) => {
-                    return fetch(`http://localhost:5000/details/premium/${params.id}`)
+                    return fetch(`https://learning-platform-server-side-lime.vercel.app/details/premium/${params.id}`)
                 },
                 element: <PrivateRoute><PremiumAccess></PremiumAccess></PrivateRoute>
             },

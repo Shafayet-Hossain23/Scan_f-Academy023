@@ -5,7 +5,7 @@ import './LeftSide.css'
 const LeftSide = () => {
     const [courseName, setCourseName] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/course-name')
+        fetch('https://learning-platform-server-side-lime.vercel.app/course-name')
             .then(res => res.json())
             .then(data => setCourseName(data))
     }, [])

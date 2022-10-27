@@ -5,7 +5,7 @@ const FAQ = () => {
     const { user } = useContext(AuthContext)
     return (
         <div>
-            <p>This is FAQ {user} </p>
+            <p>This is FAQ {user?.name} </p>
         </div>
     );
 };

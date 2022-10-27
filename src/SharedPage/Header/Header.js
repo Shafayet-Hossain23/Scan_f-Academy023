@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import image1 from '../../Assets/images/image-1.png';
 import { AuthContext } from '../../Context/UserContext';
@@ -54,34 +54,47 @@ const Header = () => {
                                 </Link>
                             </Nav.Link>
                         </Nav>
+                        <div title='change theme' className='me-4'>
+                            <Form >
+                                <Form.Check
+
+                                    type="switch"
+                                    id="custom-switch"
+                                    label=""
+                                />
+                            </Form>
+                        </div>
                         <div>
-                            {
-                                user?.uid ?
-                                    <>
-                                        {
-                                            user?.photoURL ?
-                                                <>
-                                                    <div>
-                                                        <img title={user?.displayName} className='text-white me-2 rounded-circle' style={{ height: '37px', width: "33px" }} src={user.photoURL} alt="" />
-                                                        <Button className='ms-2' onClick={logoutClickHandler} variant="outline-danger">Logout
-                                                        </Button>
-                                                    </div>
-                                                </> :
-                                                <>
-                                                    <div>
-                                                        <FaUserCircle className='text-white me-2' style={{ height: '40px', width: "33px" }} />
-                                                        <Button className='ms-2' onClick={logoutClickHandler} variant="outline-danger">Logout
-                                                        </Button>
-                                                    </div>
-                                                </>
-                                        }
-                                    </> :
-                                    <>
-                                        <Link to='/login'>
-                                            <Button variant="outline-warning">Login
-                                            </Button>
-                                        </Link></>
-                            }
+
+                            <div>
+                                {
+                                    user?.uid ?
+                                        <>
+                                            {
+                                                user?.photoURL ?
+                                                    <>
+                                                        <div>
+                                                            <img title={user?.displayName} className='text-white me-2 rounded-circle' style={{ height: '37px', width: "33px" }} src={user.photoURL} alt="" />
+                                                            <Button className='ms-2' onClick={logoutClickHandler} variant="outline-danger">Logout
+                                                            </Button>
+                                                        </div>
+                                                    </> :
+                                                    <>
+                                                        <div>
+                                                            <FaUserCircle className='text-white me-2' style={{ height: '40px', width: "33px" }} />
+                                                            <Button className='ms-2' onClick={logoutClickHandler} variant="outline-danger">Logout
+                                                            </Button>
+                                                        </div>
+                                                    </>
+                                            }
+                                        </> :
+                                        <>
+                                            <Link to='/login'>
+                                                <Button variant="outline-warning">Login
+                                                </Button>
+                                            </Link></>
+                                }
+                            </div>
                         </div>
 
                     </Navbar.Collapse>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaFileDownload, FaStar, FaUserGraduate, FaArrowCircleRight } from 'react-icons/fa';
+
 import './CourseDetails.css'
 
 
@@ -18,7 +19,7 @@ const CourseDetails = () => {
                             <h3 className='mb-0'>{courseTitle}</h3>
                         </div>
                         <div title='Download' className='hoverEffect'>
-                            <FaFileDownload></FaFileDownload>
+                            <FaFileDownload />
                         </div>
                     </Card.Title>
                 </Card.Header>
