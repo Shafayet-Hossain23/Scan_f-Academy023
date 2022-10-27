@@ -15,7 +15,7 @@ const LeftSide = () => {
             position: "sticky",
             top: "80px"
         }}>
-            <p>Learn Language :</p>
+            <h5>Learn Language :</h5>
             {
                 courseName.map(c => <p key={c.id}><Link to={`/details/${c.id}`} className='text-warning'>{c.name}</Link></p>)
             }

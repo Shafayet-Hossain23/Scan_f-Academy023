@@ -10,7 +10,7 @@ const ReactToPdf = () => {
     return (
         <div className="App">
             <Pdf targetRef={ref} filename="course-overview">
-                {({ toPdf }) => <button onClick={toPdf}><FaFileDownload></FaFileDownload></button>}
+                {({ toPdf }) => <button className=' p-0' onClick={toPdf}><FaFileDownload></FaFileDownload></button>}
             </Pdf>
             <div ref={ref}>
 

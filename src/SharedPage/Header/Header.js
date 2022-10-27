@@ -54,7 +54,7 @@ const Header = () => {
                                 </Link>
                             </Nav.Link>
                         </Nav>
-                        <div title='change theme' className='me-3'>
+                        <div title='Dark/Light' className='me-3'>
                             <Form >
                                 <Form.Check
 

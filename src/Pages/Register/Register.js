@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
 
 const Register = () => {
     const { registerHandler, updateProfileHandler } = useContext(AuthContext);
     const [error, setError] = useState('')
     const [success, setSuccess] = useState(false)
+    const navigate = useNavigate()
     const signUpEventHandler = (event) => {
         event.preventDefault()
         const form = event.target
@@ -14,6 +15,7 @@ const Register = () => {
         const password = form.password.value
         const name = form.name.value
         const photo = form.photo.value
+
         console.log(email, password, name, photo)
         setError('')
         setSuccess(false)
@@ -24,6 +26,7 @@ const Register = () => {
                 updateProfileHandler(name, photo)
                 form.reset()
                 setSuccess(true)
+                navigate('/');
             })
             .catch(error => {
                 const errorMessage = error.message
