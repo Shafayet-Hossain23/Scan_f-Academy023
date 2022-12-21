@@ -3,12 +3,14 @@ import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../Context/UserContext';
+import LoaderSpinner from '../../Components/LoaderSpinner';
 
 
 const Login = () => {
     const { loginHandler, googlePopUpSignin, githubPopup } = useContext(AuthContext);
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
+    const [loader, setLoader] = useState(false)
     const navigate = useNavigate();
     const location = useLocation()
     const from = location.state?.from?.pathname || "/";
@@ -20,18 +22,21 @@ const Login = () => {
         console.log(email, password)
         setError('')
         setSuccess('')
+        setLoader(true)
         loginHandler(email, password)
             .then(result => {
                 const user = result.user
                 console.log(user)
                 setSuccess("Successfullly Login!")
                 form.reset()
+                setLoader(false)
                 navigate(from, { replace: true });
             })
             .catch(error => {
                 const errorMessage = error.message
                 console.error(error);
                 setError(errorMessage)
+                setLoader(false)
             })
     }
     const googlePopupHandler = () => {
@@ -65,6 +70,9 @@ const Login = () => {
                 console.error(error);
                 setError(errorMessage)
             })
+    }
+    if (loader) {
+        return <LoaderSpinner></LoaderSpinner>
     }
     return (
 

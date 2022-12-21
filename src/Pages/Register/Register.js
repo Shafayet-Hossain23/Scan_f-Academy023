@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
+import LoaderSpinner from '../../Components/LoaderSpinner';
 import { AuthContext } from '../../Context/UserContext';
 
 const Register = () => {
-    const { registerHandler, updateProfileHandler } = useContext(AuthContext);
+    const { registerHandler, updateProfileHandler, setLoading } = useContext(AuthContext);
     const [error, setError] = useState('')
     const [success, setSuccess] = useState(false)
+    const [loader, setLoader] = useState(false)
     const navigate = useNavigate()
     const signUpEventHandler = (event) => {
         event.preventDefault()
@@ -16,9 +18,10 @@ const Register = () => {
         const name = form.name.value
         const photo = form.photo.value
 
-        console.log(email, password, name, photo)
+        // console.log(email, password, name, photo)
         setError('')
         setSuccess(false)
+        setLoader(true)
         registerHandler(email, password)
             .then(result => {
                 const user = result.user
@@ -26,13 +29,19 @@ const Register = () => {
                 updateProfileHandler(name, photo)
                 form.reset()
                 setSuccess(true)
+                setLoading(false)
+                setLoader(false)
                 navigate('/');
             })
             .catch(error => {
                 const errorMessage = error.message
                 console.error(error)
                 setError(errorMessage)
+                setLoader(false)
             })
+    }
+    if (loader) {
+        return <LoaderSpinner></LoaderSpinner>
     }
     return (
         <div>
